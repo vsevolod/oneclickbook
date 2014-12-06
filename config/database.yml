@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: vsevolod
+  password: vsevolod
+
+development:
+  <<: *default
+  database: OneClickBook_development
+test:
+  <<: *default
+  database: OneClickBook_test
+
+production:
+  <<: *default
+  database: OneClickBook_production
+  username: OneClickBook
+  password: <%= ENV['ONECLICKBOOK_DATABASE_PASSWORD'] %>
