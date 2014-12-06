@@ -20,11 +20,13 @@ gem 'spring',      group: :development
 
 
 gem 'devise'
+gem 'two_factor_authentication'
 gem 'cancan'
 gem 'aasm'
 gem 'ancestry'
 gem 'squeel'
 gem 'angular-rails-templates'
+gem 'slim'
 
 
 gem 'bootstrap-sass'
