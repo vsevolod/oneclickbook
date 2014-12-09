@@ -1,8 +1,10 @@
 class AddDeviseToUsers < ActiveRecord::Migration
-  def self.up
+  def change
     create_table(:users) do |t|
       t.integer :organization_id
-      t.string :email
+      t.string  :email
+      t.string  :first_name
+      t.string  :last_name
 
       ## Database authenticatable
       t.string :phone,              null: false, default: ""
@@ -37,12 +39,7 @@ class AddDeviseToUsers < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     add_index :users, :organization_id
-  end
-
-  def self.down
-    raise ActiveRecord::IrreversibleMigration
   end
 end

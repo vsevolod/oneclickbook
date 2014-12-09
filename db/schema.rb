@@ -11,14 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206163712) do
+ActiveRecord::Schema.define(version: 20141206183741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+
+  create_table "organizations", force: true do |t|
+    t.string   "name"
+    t.string   "subdomain"
+    t.hstore   "settings"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.integer  "organization_id"
     t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "phone",                        default: "", null: false
     t.string   "encrypted_password",           default: "", null: false
     t.string   "reset_password_token"
@@ -35,7 +46,6 @@ ActiveRecord::Schema.define(version: 20141206163712) do
     t.integer  "second_factor_attempts_count", default: 0
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["organization_id"], name: "index_users_on_organization_id", using: :btree
   add_index "users", ["otp_secret_key"], name: "index_users_on_otp_secret_key", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

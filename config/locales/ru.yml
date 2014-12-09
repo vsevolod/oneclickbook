@@ -5,12 +5,20 @@ ru:
         one:   Пользователь
         few:   Пользователи
         other: Пользователи
+      organization:
+        one:   Организация
+        few:   Организаций
+        other: Организации
     attributes:
+      organization:
+        name: Название
+        settings: Опции
+        subdomain: Поддомен
       user:
         email: E-mail
         organization: Организация
-        firstname: Имя
-        lastname: Фамилия
+        first_name: Имя
+        last_name: Фамилия
         phone: Телефон
         password: Пароль
         password_confirmation: Подтверждение пароля

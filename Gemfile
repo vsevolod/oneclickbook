@@ -44,5 +44,6 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'jasmine'
+  gem 'faker'
 end
 

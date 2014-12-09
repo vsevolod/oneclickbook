@@ -1,1 +1,4 @@
 OneClickBook service second version
+
+For ther first time of createing database:
+  "CREATE EXTENSION IF NOT EXISTS hstore;"
