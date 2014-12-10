@@ -28,12 +28,12 @@ gem 'squeel'
 gem 'angular-rails-templates'
 gem 'slim'
 
-
 gem 'bootstrap-sass'
 # Assets
 gem 'rails-assets-angular'
-gem 'rails-assets-angular-bootstrap'
+gem 'rails-assets-angular-ui-router'
 gem 'rails-assets-components--underscore'
+gem 'jquery-rails'
 
 group :development do
   gem 'pry'
@@ -47,3 +47,6 @@ group :development do
   gem 'faker'
 end
 
+group :assets do
+  gem 'coffee-rails'
+end

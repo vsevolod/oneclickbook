@@ -49,8 +49,8 @@ Devise.setup do |config|
   config.strip_whitespace_keys = [ :phone, :organization_id ]
 
   # Two factor authentication
-  config.max_login_attempts = 3
-  config.allowed_otp_drift_seconds = 30
+  config.max_login_attempts = 5
+  config.allowed_otp_drift_seconds = 300
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
